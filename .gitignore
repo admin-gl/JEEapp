@@ -1,6 +1,10 @@
 /.metadata/
 /ApplicationWeb/build/
 .gitignore
+
 /ApplicationWeb/.settings
 /ApplicationWeb/.classpath
 /ApplicationWeb/.project
+/ApplicationWeb/.idea
+/.idea
+.idea
