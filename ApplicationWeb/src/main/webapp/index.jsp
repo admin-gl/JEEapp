@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>JSP - Accueil</title>
 </head>
 <body>
-<h1><%= "Hello World!" %>
+<h1><%= "Bienvenue sur Void Musique" %>
 </h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+<a href="accueil-servlet">Accueil Servlet</a>
 </body>
 </html>

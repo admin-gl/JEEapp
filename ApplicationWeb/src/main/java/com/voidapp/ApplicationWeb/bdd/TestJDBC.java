@@ -12,8 +12,6 @@ public class TestJDBC {
     private List<String> messages = new ArrayList<String>();
 
     public List<String> executerTests( HttpServletRequest request ) {
-        /* Ici, nous placerons le code de nos manipulations */
-        /* ... */
 
         /*   Chargement du driver JDBC pour MySQL */
         try {
@@ -38,12 +36,12 @@ public class TestJDBC {
             messages.add( "Connexion réussie !" );
 
             /* Création de l'objet gérant les requêtes */
-            statement = connexion.createStatement();
-            messages.add( "Objet requête créé !" );
+           /* statement = connexion.createStatement();*/
+            /*messages.add( "Objet requête créé !" );*/
 
             /* Exécution d'une requête d'écriture*/
 
-            int statut = statement.executeUpdate( "INSERT INTO Utilisateur (id,email, prenom, nom, adressefacturation) VALUES ('1','jmarc@mail.fr', 'jean', 'marc', '01 Rue du Test');" );
+           /* int statut = statement.executeUpdate( "INSERT INTO Utilisateur (id,email, prenom, nom, adressefacturation) VALUES ('1','jmarc@mail.fr', 'jean', 'marc', '01 Rue du Test');" );*/
 
         } catch ( SQLException e ) {
             messages.add( "Erreur lors de la connexion : <br/>"
