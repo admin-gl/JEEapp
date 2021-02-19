@@ -1,30 +1,46 @@
 package com.voidapp.ApplicationWeb.compteUtilisateur;
 
 
+import java.util.Date;
+
 public class Utilisateur {
 
     /* Caractéristiques inconnues des autres utilisateurs */
     int id;
     String mail;
-
-    /* Caractéristiques connues des autres utilisateurs */
-    String statut;
+    String mdp;
+    Civilite civilite;
+    Statut statut;
     String nom;
+    String prenom;
+    Date dateadhesion;
+    String adressefacturation;
+    Genre genrepref;
 
-    /* Constructeur */
-    public Utilisateur(int pId) {
-        this.id = pId;
-        this.statut = "Utilisateur";
-        this.nom = "Non Renseigné";
-        this.mail = "Non Renseigné";
+    public Utilisateur(int id, String mail, String mdp, Civilite civilite,  String nom, String prenom, Date dateadhesion, String adressefacturation, Genre genrepref) {
+        this.id = id;
+        this.mail = mail;
+        this.mdp = mdp;
+        this.civilite = civilite;
+        this.statut = Statut.Utilisateur;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.dateadhesion = dateadhesion;
+        this.adressefacturation = adressefacturation;
+        this.genrepref = genrepref;
     }
 
-    /* Constructeur avec paramètres*/
-    public Utilisateur(int pId, String pStatut, String pNom, String pMail) {
-        this.id = pId;
-        this.statut = pStatut;
-        this.nom = pNom;
-        this.mail = pMail;
+    public enum Statut{
+        Utilisateur, AdministrateurClient, AdministrateurMusique
     }
+
+    public enum Civilite {
+        MADAME, MADEMOISELLE, MONSIEUR
+    }
+
+    public enum Genre {
+        House, Pop, Classique, Jazz, Métal
+    }
+
 
 }
