@@ -13,4 +13,15 @@
         <servlet-name>GestionTestJDBC</servlet-name>
         <url-pattern>/testjdbc</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Inscription</servlet-name>
+        <servlet-class>com.voidapp.ApplicationWeb.servlets.Inscription</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Inscription</servlet-name>
+        <url-pattern>/inscription</url-pattern>
+    </servlet-mapping>
+
 </web-app>
