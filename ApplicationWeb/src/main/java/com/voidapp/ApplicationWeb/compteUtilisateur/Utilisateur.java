@@ -17,7 +17,10 @@ public class Utilisateur {
     String adressefacturation;
     Genre genrepref;
 
-    public Utilisateur(int id, String mail, String mdp, Civilite civilite,  String nom, String prenom, String adressefacturation, Genre genrepref) {
+    public Utilisateur() {
+    }
+
+    public Utilisateur(int id, String mail, String mdp, Civilite civilite, String nom, String prenom, String adressefacturation, Genre genrepref) {
         this.id = id;
         this.mail = mail;
         this.mdp = mdp;
