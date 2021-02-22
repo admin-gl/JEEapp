@@ -30,6 +30,8 @@ public final class InscriptionFormulaire {
         String motDePasse = getValeurChamp( request, CHAMP_PASS );
         String confirmation = getValeurChamp( request, CHAMP_CONF );
         String nom = getValeurChamp( request, CHAMP_NOM );
+        String prenom = getValeurChamp( request, CHAMP_PRENOM );
+        String adresse = getValeurChamp( request, CHAMP_ADRESSE );
 
         Utilisateur utilisateur = new Utilisateur();
 
@@ -55,8 +57,23 @@ public final class InscriptionFormulaire {
         }
         utilisateur.setNom( nom );
 
+        try {
+            validationNonVide("Prenom", prenom );
+        } catch ( Exception e ) {
+            setErreur( CHAMP_PRENOM, e.getMessage() );
+        }
+        utilisateur.setPrenom( prenom );
+
+        try {
+            validationNonVide("Adresse", adresse );
+        } catch ( Exception e ) {
+            setErreur( CHAMP_ADRESSE, e.getMessage() );
+        }
+        utilisateur.setAdressefacturation(adresse);
+
         if ( erreurs.isEmpty() ) {
             resultat = "Succès de l'inscription.";
+            resultat = resultat + utilisateur.AddUser();
         } else {
             resultat = "Échec de l'inscription.";
         }

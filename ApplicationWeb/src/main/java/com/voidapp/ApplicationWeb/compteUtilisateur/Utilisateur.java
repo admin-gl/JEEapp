@@ -1,11 +1,12 @@
 package com.voidapp.ApplicationWeb.compteUtilisateur;
 
 
+import com.voidapp.ApplicationWeb.bdd.AjoutBdd;
+
 import java.util.Date;
 
 public class Utilisateur {
-
-    /* Caractéristiques inconnues des autres utilisateurs */
+    public int maxId=0;
     int id;
     String mail;
     String mdp;
@@ -113,6 +114,14 @@ public class Utilisateur {
         this.genrepref = genrepref;
     }
 
+    public int getMaxId() {
+        return maxId;
+    }
+
+    public void setMaxId(int maxId) {
+        this.maxId = maxId;
+    }
+
     public enum Statut{
         Utilisateur, AdministrateurClient, AdministrateurMusique
     }
@@ -125,5 +134,11 @@ public class Utilisateur {
         House, Pop, Classique, Jazz, Métal
     }
 
+    public String AddUser(){
+        AjoutBdd requete = new AjoutBdd();
+        String reponse = requete.AjoutUtilisateur(this);
+        setMaxId(maxId+1);
+        return reponse;
+    }
 
 }

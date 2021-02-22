@@ -12,6 +12,17 @@
         <legend>Inscription</legend>
         <p>Formulaire à remplir pour s'inscrire en tant qu'utilisateur.</p>
 
+        <span class="civ"><fieldset>
+            <legend>Veuillez sélectionner votre civilité</legend>
+            <div>
+                <input type="checkbox" id="monsieur" name="civilite" value="monsieur" checked>
+                <label for="monsieur">Monsieur</label>
+            </div>
+            <div>
+                <input type="checkbox" id="madame" name="civilite" value="madame">
+                <label for="madame">Madame</label>
+            </div>
+        </fieldset></span>
 
         <label for="nom">Nom <span class="requis">*</span></label>
         <input type="text" id="nom" name="nom" value="${utilisateur.nom}" size="20" maxlength="60" />

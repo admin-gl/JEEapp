@@ -42,3 +42,7 @@ form .erreur {
 form .succes {
     color: #8ed8a2;
 }
+
+form  .civ {
+    margin: 5px 5px 0px 0px;
+}
