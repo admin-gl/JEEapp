@@ -4,19 +4,21 @@ package com.voidapp.ApplicationWeb.bdd;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
 import javax.servlet.http.HttpServletRequest;
 
 public class TestJDBC {
     /* La liste qui contiendra tous les résultats de nos essais */
     private List<String> messages = new ArrayList<String>();
-
+    private ResourceBundle properties;
+    private static String resourceBundle = "config";
     public List<String> executerTests( HttpServletRequest request ) {
-
+        properties = ResourceBundle.getBundle(resourceBundle);
         /*   Chargement du driver JDBC pour MySQL */
         try {
             messages.add( "Chargement du driver..." );
-            Class.forName( "com.mysql.jdbc.Driver" );
+            Class.forName( properties.getString("DB_DRIVER") );
             messages.add( "Driver chargé !" );
         } catch ( ClassNotFoundException e ) {
             messages.add( "Erreur lors du chargement : le driver n'a pas été trouvé dans le classpath ! <br/>"
@@ -24,9 +26,9 @@ public class TestJDBC {
         }
 
         /* Connexion à la base de données */
-        String url = "jdbc:mysql://vps817240.ovh.net:3306/info_team04_schema";
-        String utilisateur = "info_team04";
-        String motDePasse = "811lrNyM";
+        String url = properties.getString("JDBC_URL");
+        String utilisateur = properties.getString("DB_LOGIN");
+        String motDePasse = properties.getString("DB_PASSWORD");
         Connection connexion = null;
         Statement statement = null;
         ResultSet resultat = null;
