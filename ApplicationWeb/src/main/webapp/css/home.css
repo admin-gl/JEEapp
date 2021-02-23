@@ -1,20 +1,27 @@
 body {
     background-color:#150a11;
 }
+.css-selector {
+    font-family: 'Rubik';
+}
+
 h1 {
     position: center;
-    font-family: "Avenir Next";
+    font-family: "Rubik";
+    letter-spacing: 2px;
+    font-size: 156px;
+    line-height: 200px;
     font-weight: bold;
     color:white;
-    text-align:center;
+    text-align: start;
 }
 p {
-    font-family:"Avenir Next";
+    font-family:"Rubik";
     color:white;
     font-size:20px;
 }
 a {
-    font-family: "Avenir Next";
+    font-family: "Rubik";
     color:white
 }
 /* Add a black background color to the top navigation */
@@ -36,13 +43,13 @@ div.topnav
 
 .topnav img {
     float:left;
-    margin:-9px 0;
+    margin:-10px 0;
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
     float: left;
-    font-family: "Avenir Next";
+    font-family: "Rubik";
     color: #f2f2f2;
     text-align: center;
     padding: 14px 18px;
@@ -53,18 +60,29 @@ div.topnav
 
 /* Change the color of links on hover */
 .topnav a:hover {
-    background-color: #6a6da1;
+    background-color: #00559f;
     color: white;
 }
 
 .topnav a.sign {
     float: right;
-    font-family: "Avenir Next";
+    font-family: "Rubik";
     font-weight: bold;
     text-align: center;
-    padding: 14px 18px;
+    padding: 15px 18px;
     text-decoration: none;
     font-size: 20px;
+}
+
+div.bottom-nav{
+    top: 0;
+    padding: 20px;
+    background-color: black;
+    overflow: hidden;
+}
+.bottom-nav img {
+    float:left;
+    margin:-10px 0;
 }
 
 #particles-js canvas {
